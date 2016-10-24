@@ -5,7 +5,7 @@ source 'https://rubygems.org'
 gem 'rails', '4.2.7'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3', group: :development
-  #heroku 
+  #heroku
 gem 'pg', group: :production
 gem 'rails_12factor', group: :production
 # Use SCSS for stylesheets
@@ -49,30 +49,33 @@ group :development do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
-  
+
   #エラー画面をわかりやすく整形してくれる
   gem 'better_errors'
-  
+
   #better_errorsの画面上にirb/pry(PERL)を表示する
   gem 'binding_of_caller'
 
-  
+
   #画像編集機能の追加
   #gem 'rmagick', "~> 2.15.4", require: 'RMagick'
 end
 
-  
+
   #ページネーション機能
   gem 'kaminari'
-  
+
   #画像投稿機能
   gem 'carrierwave'
-  
+
   #ダミー入力
   gem 'faker'
-  
+
   #URLへ自動リンクをはる
   gem 'rails_autolink'
-  
+
   #cloudinary追加
 gem 'cloudinary'
+
+#S3 保存
+gem 'fog'

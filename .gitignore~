@@ -20,5 +20,3 @@ vendor/bundle
 /tmp
 # Ignore other unneeded files.
 /public/uploads/*
-
-config/secrets.yml
