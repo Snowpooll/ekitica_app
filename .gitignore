@@ -21,4 +21,4 @@ vendor/bundle
 # Ignore other unneeded files.
 /public/uploads/*
 
-config/secrets.yml
+/config/secrets.yml
