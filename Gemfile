@@ -79,3 +79,11 @@ gem 'cloudinary'
 
 #S3 保存
 gem 'fog'
+
+#devise install
+gem 'devise'
+#twitter login
+gem 'omniauth-twitter'
+
+#foreman
+gem 'foreman'
