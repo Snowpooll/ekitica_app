@@ -87,3 +87,6 @@ gem 'omniauth-twitter'
 
 #foreman
 gem 'foreman'
+
+#exif 追加
+gem 'rmagick'

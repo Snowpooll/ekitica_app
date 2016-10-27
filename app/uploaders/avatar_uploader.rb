@@ -3,12 +3,12 @@
 class AvatarUploader < CarrierWave::Uploader::Base
 
   # Include RMagick or MiniMagick support:
-  # include CarrierWave::RMagick
+  include CarrierWave::RMagick
   # include CarrierWave::MiniMagick
 
   # Choose what kind of storage to use for this uploader:
-  storage :file
-   #storage :fog
+  #storage :file
+   storage :fog
 
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
@@ -47,5 +47,12 @@ class AvatarUploader < CarrierWave::Uploader::Base
   # def filename
   #   "something.jpg" if original_filename
   # end
+  process :get_exif_info
+
+  def get_exif_info
+# 　　　　　　 exif = Magick::Image.read(self.file.file).first
+　　　　　　 exif = Magick::Image.read("#{current_path}[0]").first
+    binding.pry
+  end
 
 end
