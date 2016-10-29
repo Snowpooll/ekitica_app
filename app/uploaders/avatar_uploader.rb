@@ -50,9 +50,17 @@ class AvatarUploader < CarrierWave::Uploader::Base
   process :get_exif_info
 
   def get_exif_info
-# 　　　　　　 exif = Magick::Image.read(self.file.file).first
-　　　　　　 exif = Magick::Image.read("#{current_path}[0]").first
-    binding.pry
+    #exif = Magick::Image.read(self.file.file).first
+    #exif = EXIFR::JPEG::new(self.file.file)
+    #  p exif_lat = Magick::Image.read(self.file.file)[0].get_exif_by_entry('GPSLatitude')
+    #  p exif_lng = Magick::Image.read(self.file.file)[0].get_exif_by_entry('GPSLongitude')
+
+    #s3 photo exif gps info
+     exif_lat = Magick::Image.read(self.file.file)[0].get_exif_by_entry('GPSLatitude')[0][1].to_s.split(',').map(&:strip)
+     exif_lng = Magick::Image.read(self.file.file)[0].get_exif_by_entry('GPSLongitude')[0][1].to_s.split(',').map(&:strip)
+     latitude = (Rational(exif_lat[0]) + Rational(exif_lat[1])/60 + Rational(exif_lat[2])/3600).to_f
+     longitude = (Rational(exif_lng[0]) + Rational(exif_lng[1])/60 + Rational(exif_lng[2])/3600).to_f
+    #binding.pry
   end
 
 end

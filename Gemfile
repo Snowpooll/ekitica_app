@@ -90,3 +90,9 @@ gem 'foreman'
 
 #exif 追加
 gem 'rmagick'
+
+#debug pry
+gem 'pry'
+
+#exif get_exif_info
+gem 'exifr'

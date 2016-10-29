@@ -3,11 +3,11 @@ class Micropost < ActiveRecord::Base
   validates :user_id, presence: true
   validates :content, presence: true, length: {maximum: 140}
 
-  
+
   mount_uploader :picture, AvatarUploader
-  
+
   validates :picture,
             :file_size => {
-                :maximum => 1.megabytes.to_i
+                :maximum => 2.megabytes.to_i
             }
 end
